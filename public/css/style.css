@@ -1,0 +1,597 @@
+/* General Body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #D2C1B6;
+  color: #333;
+}
+
+/* Navigation */
+nav {
+  background-color: #1B3C53;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.navbar-logo a {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #f39c12; /* nice hover effect */
+}
+
+/* Header / Footer */
+header, footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #007BFF;
+  color: #fff;
+}
+
+footer {
+    background-color:#456882;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    position: relative; /* don't overlap content */
+}
+
+/* Forms */
+form {
+  background-color: #F9F3EF;
+  padding: 10px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+}
+
+form input, form button {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+form button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Book List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #fff;
+  margin: 10px auto;
+  padding: 15px;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+ul li form {
+  display: inline-block;
+  width: auto;
+  margin-left: 10px;
+}
+
+/* Dashboard Table */
+h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 90%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #1a73e8;
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .return-button button {
+      padding: 6px 12px;
+      background-color: #e53935;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .return-button button:hover {
+      background-color: #b71c1c;
+    }
+
+    @media(max-width: 600px) {
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  ul li, form, table {
+    width: 95%;
+  }
+}
+
+/* Badge Styles */
+.badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.badge.available {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.badge.rented {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Admin Dashboard Styles */
+.admin-container {
+    padding-bottom: 40px; /* keep footer away from content */
+}
+
+.admin-form {
+  background-color: #F9F3EF;
+  padding: 20px;
+  width: 500px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.admin-form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #1B3C53;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-form button:hover {
+  background-color: #456882;
+}
+
+.admin-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-bottom: 50px;   /* more breathing room below table */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table th, 
+.admin-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #456882;
+    font-weight: bold;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.admin-table tr:hover {
+  background-color: #F9F3EF;
+}
+
+.inline-form {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.update-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+.admin_logout{
+  display: flex;
+}
+.logout-btn {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 6px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #b02a37;
+}
+
+/*dashboad************/
+.dashboard-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dashboard-table th, .dashboard-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.dashboard-table th {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.return-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.return-btn:hover {
+  background-color: #218838;
+}
+
+.inline-form {
+  display: inline-block;
+}
+
+/* Homepage Book Section */
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+  padding-bottom: 100px;
+}
+
+.book-card { 
+  background-color: #F9F3EF;
+  width: 250px;
+  height: 500px; /* fixed height */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribute space evenly */
+  overflow: hidden;
+}
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card h3 {
+  margin-bottom: 10px;
+}
+.book-card > form{
+    background-color: #fff;
+    padding: 5px;
+    margin: 20px auto;
+    width: 203px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  font-style: italic;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.available {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.badge.rented {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.rent-btn {
+  padding: 8px 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #1B3C53;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.rent-btn:hover {
+  background-color: #456882;
+}
+.book-cover {
+  width: 100%;
+  height: 200px; /* fixed height for images */
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.book-description {
+  flex-grow: 1;
+  overflow-y: auto; /* scrollable if text is long */
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* //// Reantal PAge////////   */
+.rent_container{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+}
+.rent-card {
+      background-color: #F9F3EF;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 700px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .book-image {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .book-info {
+      text-align: center;
+    }
+
+    .book-info h1 {
+      margin: 10px 0;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .book-info p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .rent-form {
+      background-color: #D2C1B6;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .rent-form label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .rent-form select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 150px;
+      font-size: 16px;
+    }
+
+    .rent-form .total-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+    .rent-form button {
+      padding: 12px 25px;
+      background-color: #1B3C53;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .rent-form button:hover {
+      background-color: #456882;
+    }
+
+    @media(max-width: 500px) {
+      .book-image {
+        width: 150px;
+        height: 220px;
+      }
+    }
+
+
+
+
+
+
+.rented-badge{
+    display: inline-block;
+    padding: 6px 12px;
+    /* color: red; */
+    background-color: red;
+    color: white;
+}
+
+    
+/* user dashboard  table*/ 
+.user_table th{
+  background-color: #456882;
+  font-weight: bold;
+}
+.user_table tr:hover {
+  background-color: #F9F3EF;
+}
+
+/* Ratings star*/ 
+/* Star rating container */
+.star-rating {
+  display: inline-block;
+  font-size: 20px;
+  color: #000000;
+}
+
+.star-rating .filled {
+  color: #fbc02d; /* gold for filled stars */
+}
+
+.star-rating span {
+  margin-right: 2px;
+}
+
+ /* cover image*/
+.cover {
+  width: 100%;
+  height: 300px;           /* Fixed height for the image container */
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;       /* Ensures image covers container without distortion */
+  object-position: center; /* Centers the image inside the div */
+  display: block;
+  border-radius: 10px;
+}

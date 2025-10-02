@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Rental</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <!-- Left: Logo / Brand -->
+    <div class="navbar-logo">
+      <a href="/books">📚 BookBazaar</a>
+    </div>
+
+    <!-- Right: Links -->
+    <div class="navbar-links">
+      <a href="/books">Home</a>
+      <% if (!locals.userId) { %>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      <% } else { %>
+        <a href="/books/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+      <% } %>
+    </div>
+  </nav>
+  <hr>
+</body>
+</html>
+

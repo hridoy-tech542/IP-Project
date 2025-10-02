@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<h1>Available Books</h1>
+
+<div class="books-container">
+  <% books.forEach(book => { %>
+    <div class="book-card">
+  <div class="cover">
+    <img src="<%= book.coverImage %>" alt="<%= book.title %>">
+  </div>
+  <h3><%= book.title %></h3>
+  <p><strong>Author:</strong> <%= book.author %></p>
+  <p><strong>Price per week:</strong> Tk <%= book.rentPrice %></p>
+
+  <!-- Star Rating -->
+  <div class="star-rating">
+    <span class="filled">&#9733;</span>
+    <span class="filled">&#9733;</span>
+    <span class="filled">&#9733;</span>
+    <span>&#9733;</span>
+    <span>&#9733;</span>
+    (3.0)
+  </div>
+
+  <% let rented = false; %>
+  <% if (user) { %>
+    <% user.rentedBooks.forEach(item => { %>
+      <% if (item.book.toString() === book._id.toString()) rented = true; %>
+    <% }) %>
+  <% } %>
+
+  <% if (book.available && !rented) { %>
+    <a href="/books/rent/<%= book._id %>"><button class="rent-btn">Rent</button></a>
+  <% } else { %>
+    <span class="rented-badge">Not Available</span>
+  <% } %>
+</div>
+
+  <% }) %>
+</div>
+
+
+<%- include('partials/footer') %>

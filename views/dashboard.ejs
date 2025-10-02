@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<h1>Welcome, <%= user.username %>!</h1>
+
+  <% if (user.rentedBooks.length === 0) { %>
+    <p style="text-align:center;">You have not rented any books yet.</p>
+  <% } else { %>
+    <table class="user_table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Duration (Weeks)</th>
+          <th>Total Price (Tk)</th>
+          <th>Return Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% user.rentedBooks.forEach(item => { %>
+          <% if(item.book) { %>
+            <tr>
+              <td><%= item.book.title %></td>
+              <td><%= item.book.author %></td>
+              <td><%= item.duration %></td>
+              <td><%= item.totalPrice %></td>
+              <td><%= new Date(item.returnDate).toDateString() %></td>
+
+              <td class="return-button">
+                <form action="/books/return/<%= item.book._id %>" method="POST">
+                  <button type="submit">Return</button>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+  <div class="rent_container">
+    <div class="rent-card">
+    <img src="<%= book.coverImage %>" alt="<%= book.title %>" class="book-image">
+
+    <div class="book-info">
+      <h1><%= book.title %></h1>
+      <p><strong>Author:</strong> <%= book.author %></p>
+      <p><strong>Description:</strong> <%= book.description %></p>
+      <p><strong>Price per week:</strong> Tk <span id="basePrice"><%= book.rentPrice %></span></p>
+    </div>
+    <!-- Star Rating -->
+  <div class="star-rating">
+    <span class="filled">&#9733;</span>
+    <span class="filled">&#9733;</span>
+    <span class="filled">&#9733;</span>
+    <span>&#9733;</span>
+    <span>&#9733;</span>
+    (3.0)
+  </div>
+    <form class="rent-form" action="/books/rent/<%= book._id %>" method="POST">
+      <label for="duration">Select Duration:</label>
+      <select name="duration" id="duration" onchange="updatePrice()">
+        <option value="1">1 Week</option>
+        <option value="2">2 Weeks</option>
+        <option value="3">3 Weeks</option>
+        <option value="4">4 Weeks</option>
+      </select>
+
+      <p class="total-price">Total Price: Tk <span id="totalPrice"><%= book.rentPrice %></span></p>
+
+      <button type="submit">Rent Now</button>
+    </form>
+    </div>
+  </div>
+
+  <script>
+    const basePrice = Number(document.getElementById("basePrice").textContent);
+    function updatePrice() {
+      const duration = document.getElementById("duration").value;
+      document.getElementById("totalPrice").textContent = basePrice * duration;
+    }
+  </script>
+
+<%- include('partials/footer') %>
