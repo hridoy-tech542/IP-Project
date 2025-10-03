@@ -1,4 +1,5 @@
 // app.js
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -9,11 +10,14 @@ const adminRoutes = require("./routes/admin");
 
 const app = express();
 
-// MongoDB connection
-mongoose.connect("mongodb://127.0.0.1:27017/bookRentalDB")
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+// MongoDB Atlas connection
 
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ Connected to MongoDB Atlas"))
+.catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
