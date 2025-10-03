@@ -1,13 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
+const Book = require("../models/Book");
 const bcrypt = require("bcryptjs");
 
 
+// Root route - homepage
+router.get("/", async (req, res) => {
+  try {
+    // Fetch all books from the database
+    const books = await Book.find();
 
-//homepage 
-router.get('/', (req, res) => {
-    res.render('home'); // or home.ejs
+    // Render home.ejs with books
+    res.render("home", { books });
+  } catch (err) {
+    console.error("Error fetching books:", err);
+
+    // Render home.ejs with empty array if DB fails
+    res.render("home", { books: [] });
+  }
 });
 
 // Register
